@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Reservation" %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+             style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{% trans 'Reservation' %}</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="{% url 'pages:home' %}">{% trans 'Home' %}</a>
+                </p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">{% trans 'Reservation' %}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="reservation position-relative overlay-top overlay-bottom">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 my-5 my-lg-0">
+                        {% for info in reservation_info %}
+                            <div class="p-5">
+                                <div class="mb-4">
+                                    <h1 class="display-3 text-primary">{{ info.discount_title }}</h1>
+                                    <h1 class="text-white">{{ info.sub_title }}</h1>
+                                </div>
+                                <p class="text-white">{{ info.description }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-center p-5"
+                             style="background: rgba(51, 33, 29, .8);">
+                            <h1 class="text-white mb-4 mt-5">{% trans 'Book Your Table' %}</h1>
+                            <form class="mb-5" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input name="name" type="text"
+                                           class="form-control bg-transparent border-primary p-4"
+                                           placeholder="{% trans 'Name' %}"
+                                           required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <input name="email" type="email"
+                                           class="form-control bg-transparent border-primary p-4"
+                                           placeholder="{% trans 'Email' %}"
+                                           required="required"/>
+                                </div>
+                                <div class="form-group">
+                                    <input name="date" type="date"
+                                           class="form-control bg-transparent border-primary"
+                                           placeholder="{% now "d/m/Y" %}"
+                                           required="required"
+                                           style="color: #6c757d; padding: 0.7rem 0 2.3rem 1.45rem"/>
+                                </div>
+                                <div class="form-group">
+                                    <input name="time" type="time"
+                                           class="form-control bg-transparent border-primary"
+                                           placeholder="{% now "H:i" %}"
+                                           required="required"
+                                           style="color: #6c757d; padding: 0.7rem 0 2.3rem 1.35rem"/>
+                                </div>
+                                <div class="form-group">
+                                    <input name="number_of_people"
+                                           type="number"
+                                           class="form-control bg-transparent border-primary p-4"
+                                           placeholder="{% trans 'Number of People' %}"
+                                           required="required"/>
+                                </div>
+                                <div>
+                                    <button type="submit"
+                                            class="btn btn-primary btn-block font-weight-bold py-3">
+                                        {% trans 'Book Now' %}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        {% if messages %}
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        {% endif %}
+    </script>
+{% endblock %}

@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-01 12:45+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: info/apps.py:8
+msgid "info"
+msgstr "информация"
+
+#: info/models.py:7 info/models.py:30 info/models.py:45 pages/models.py:7
+#: products/models.py:20
+msgid "image"
+msgstr "изображение"
+
+#: info/models.py:8 info/models.py:31 products/models.py:6
+#: products/models.py:21
+msgid "title"
+msgstr "название"
+
+#: info/models.py:10 pages/models.py:28
+msgid "sub_title"
+msgstr "подзаголовок"
+
+#: info/models.py:12
+msgid "left_title"
+msgstr "заголовок слева"
+
+#: info/models.py:13
+msgid "left_description"
+msgstr "описание слева"
+
+#: info/models.py:15
+msgid "right_title"
+msgstr "заголовок справа"
+
+#: info/models.py:16
+msgid "right_description"
+msgstr "описание справа"
+
+#: info/models.py:18 info/models.py:33 info/models.py:51 pages/models.py:15
+#: pages/models.py:31 pages/models.py:48 pages/models.py:63 pages/models.py:79
+#: products/models.py:8 products/models.py:31
+msgid "created_at"
+msgstr "дата создания"
+
+#: info/models.py:24 info/models.py:25
+msgid "about"
+msgstr "о"
+
+#: info/models.py:39
+msgid "testimonial image"
+msgstr "изображение отзыва"
+
+#: info/models.py:40
+msgid "testimonial images"
+msgstr "изображения отзыва"
+
+#: info/models.py:46 pages/models.py:42 pages/models.py:74
+msgid "name"
+msgstr "имя"
+
+#: info/models.py:48
+msgid "profession"
+msgstr "профессия"
+
+#: info/models.py:49 pages/models.py:29 products/models.py:29
+msgid "description"
+msgstr "описание"
+
+#: info/models.py:57
+msgid "client"
+msgstr "клиент"
+
+#: info/models.py:58
+msgid "clients"
+msgstr "клиенты"
+
+#: pages/apps.py:8
+msgid "pages"
+msgstr "страницы"
+
+#: pages/models.py:9
+msgid "upper_title"
+msgstr "верхний заголовок"
+
+#: pages/models.py:11
+msgid "middle_title"
+msgstr "заголовок по середине"
+
+#: pages/models.py:13
+msgid "lower_title"
+msgstr "заголовок снизу"
+
+#: pages/models.py:21
+msgid "banner"
+msgstr "баннер"
+
+#: pages/models.py:22
+msgid "banners"
+msgstr "баннеры"
+
+#: pages/models.py:27
+msgid "discount_title"
+msgstr "скидочный заголовок"
+
+#: pages/models.py:37 pages/models.py:38
+msgid "reservation info"
+msgstr "информация о бронировании"
+
+#: pages/models.py:43 pages/models.py:61 pages/models.py:75
+msgid "email"
+msgstr "электронная почта"
+
+#: pages/models.py:44
+msgid "date"
+msgstr "дата"
+
+#: pages/models.py:45
+msgid "time"
+msgstr "время"
+
+#: pages/models.py:46
+msgid "number_of_people"
+msgstr "количество людей"
+
+#: pages/models.py:54
+msgid "reservation"
+msgstr "бронирование"
+
+#: pages/models.py:55
+msgid "reservations"
+msgstr "бронирования"
+
+#: pages/models.py:59
+msgid "address"
+msgstr "адрес"
+
+#: pages/models.py:60
+msgid "phone"
+msgstr "номер телефона"
+
+#: pages/models.py:69 pages/models.py:70
+msgid "contact info"
+msgstr "контактная информация"
+
+#: pages/models.py:76
+msgid "subject"
+msgstr "тема"
+
+#: pages/models.py:77
+msgid "message"
+msgstr "сообщение"
+
+#: pages/models.py:85
+msgid "contact"
+msgstr "контакт"
+
+#: pages/models.py:86
+msgid "contacts"
+msgstr "контакты"
+
+#: products/apps.py:8 products/models.py:38
+msgid "products"
+msgstr "продукты"
+
+#: products/models.py:14
+msgid "product category"
+msgstr "категория продукта"
+
+#: products/models.py:15
+msgid "product categories"
+msgstr "категории продукта"
+
+#: products/models.py:25
+msgid "category"
+msgstr "категория"
+
+#: products/models.py:28
+msgid "price"
+msgstr "цена"
+
+#: products/models.py:37
+msgid "product"
+msgstr "продукт"
+
+#: templates/about.html:5 templates/about.html:10 templates/about.html:14
+#: templates/layouts/footer.html:51 templates/layouts/header.html:19
+msgid "About Us"
+msgstr "О Нас"
+
+#: templates/about.html:12 templates/contact.html:14 templates/index.html:5
+#: templates/layouts/header.html:17 templates/menu.html:13
+#: templates/reservation.html:13 templates/service.html:12
+#: templates/testimonial.html:15
+msgid "Home"
+msgstr "Главная"
+
+#: templates/contact.html:5 templates/contact.html:11 templates/contact.html:17
+#: templates/layouts/footer.html:48 templates/layouts/header.html:27
+msgid "Contacts"
+msgstr "Контакты"
+
+#: templates/contact.html:26
+msgid "Contact Us"
+msgstr "Свяжитесь с нами"
+
+#: templates/contact.html:27
+msgid "Feel Free To Contact"
+msgstr "Не Стесняйтесь Обращаться"
+
+#: templates/contact.html:33
+msgid "Address"
+msgstr "Адрес"
+
+#: templates/contact.html:38
+msgid "Phone"
+msgstr "Номер телефона"
+
+#: templates/contact.html:43 templates/reservation.html:51
+msgid "Email"
+msgstr "Электронная почта"
+
+#: templates/contact.html:66 templates/testimonial.html:64
+msgid "Your Name"
+msgstr "Ваше Имя"
+
+#: templates/contact.html:68
+msgid "Please, enter your name"
+msgstr "Пожалуйста, введите ваше имя"
+
+#: templates/contact.html:75
+msgid "Your Email"
+msgstr "Ваша Электронная Почта"
+
+#: templates/contact.html:77
+msgid "Please, enter your email"
+msgstr "Пожалуйста, введите вашу электронную почту"
+
+#: templates/contact.html:84
+msgid "Subject"
+msgstr "Тема"
+
+#: templates/contact.html:86
+msgid "Please, enter a subject"
+msgstr "Пожалуйста, введите тему"
+
+#: templates/contact.html:93
+msgid "Message"
+msgstr "Сообщение"
+
+#: templates/contact.html:95
+msgid "Please, enter your message"
+msgstr "Пожалуйста, введите ваше сообщение"
+
+#: templates/contact.html:101
+msgid "Send Message"
+msgstr "Отправить Сообщение"
+
+#: templates/index.html:69 templates/index.html:198
+msgid "Learn More"
+msgstr "Узнать Больше"
+
+#: templates/index.html:81 templates/service.html:23
+msgid "Our Services"
+msgstr "Наши Сервисы"
+
+#: templates/index.html:82
+msgid "Fresh Beans"
+msgstr "Свежие Зерна"
+
+#: templates/index.html:92 templates/service.html:34
+msgid "Variety Of Options"
+msgstr "Разнообразие Вариантов"
+
+#: templates/index.html:93 templates/index.html:109 templates/index.html:125
+#: templates/index.html:141 templates/service.html:35 templates/service.html:51
+#: templates/service.html:67 templates/service.html:83
+msgid ""
+"Sit lorem ipsum et diam elitr est\n"
+"                                dolor sed duo. Guberg sea et et lorem dolor "
+"sed\n"
+"                                est sit\n"
+"                                invidunt, dolore tempor diam ipsum takima "
+"erat\n"
+"                                tempor"
+msgstr ""
+"Значимость этих проблем настолько очевидна, что постоянное информационно-"
+"пропагандистское обеспечение нашей деятельности в значительной обеспечение "
+"нашей деятельности в значительной."
+
+#: templates/index.html:108 templates/service.html:50
+msgid "Fresh Coffee Beans"
+msgstr "Свежие Кофейные Зерна"
+
+#: templates/index.html:124 templates/service.html:66
+msgid "Best Quality Coffee"
+msgstr "Кофе Лучшего Качества"
+
+#: templates/index.html:140 templates/service.html:82
+msgid "Online Table Booking"
+msgstr "Онлайн Бронирование Столов"
+
+#: templates/index.html:158 templates/menu.html:26
+msgid "Menu & Pricing"
+msgstr "Меню и Цены"
+
+#: templates/index.html:159 templates/menu.html:27
+msgid "Competitive Pricing"
+msgstr "Конкурентное Ценообразование"
+
+#: templates/index.html:163 templates/menu.html:31
+msgid "Hot Coffee"
+msgstr "Горячий Кофе"
+
+#: templates/index.html:180 templates/menu.html:57
+msgid "Cold Coffee"
+msgstr "Холодный Кофе"
+
+#: templates/index.html:207 templates/testimonial.html:5
+#: templates/testimonial.html:28
+msgid "Testimonial"
+msgstr "Отзыв"
+
+#: templates/index.html:208 templates/testimonial.html:29
+msgid "Our Clients Say"
+msgstr "Наши Клиенты Говорят"
+
+#: templates/index.html:226
+msgid "Leave A Comment"
+msgstr "Оставить Комментарий"
+
+#: templates/layouts/footer.html:6
+msgid "Get In Touch"
+msgstr "Свяжитесь"
+
+#: templates/layouts/footer.html:8
+msgid "Street, Tashkent, Uzbekistan"
+msgstr "Улица, Ташкент, Узбекистан"
+
+#: templates/layouts/footer.html:19
+msgid "Follow Us"
+msgstr "Следите За Нами"
+
+#: templates/layouts/footer.html:20
+msgid ""
+"Do not miss the opportunity to get news about our products and services."
+msgstr "Не упустите возможность получать новости о наших продуктах и услугах."
+
+#: templates/layouts/footer.html:34
+msgid "Working Hours"
+msgstr "Часы Работы"
+
+#: templates/layouts/footer.html:36
+msgid "Monday - Friday"
+msgstr "Понедельник - Пятница"
+
+#: templates/layouts/footer.html:38
+msgid "Saturday - Sunday"
+msgstr "Суббота - Воскресенье"
+
+#: templates/layouts/footer.html:43
+msgid "Navigation"
+msgstr "Навигация"
+
+#: templates/layouts/footer.html:45
+msgid "Comments"
+msgstr "Комментарии"
+
+#: templates/layouts/header.html:21 templates/service.html:5
+msgid "Service"
+msgstr "Сервис"
+
+#: templates/layouts/header.html:23 templates/menu.html:5
+#: templates/menu.html:11 templates/menu.html:16
+msgid "Menu"
+msgstr "Меню"
+
+#: templates/layouts/header.html:25 templates/reservation.html:5
+#: templates/reservation.html:11 templates/reservation.html:16
+msgid "Reservation"
+msgstr "Бронирование"
+
+#: templates/menu.html:52 templates/menu.html:78
+msgid "Load More"
+msgstr "Загрузить Больше"
+
+#: templates/reservation.html:39
+msgid "Book Your Table"
+msgstr "Закажите Свой Стол"
+
+#: templates/reservation.html:45
+msgid "Name"
+msgstr "Имя"
+
+#: templates/reservation.html:72
+msgid "Number of People"
+msgstr "Количество Людей"
+
+#: templates/reservation.html:78
+msgid "Book Now"
+msgstr "Заказать Сейчас"
+
+#: templates/service.html:10 templates/service.html:14
+msgid "Services"
+msgstr "Сервисы"
+
+#: templates/service.html:24
+msgid "Fresh & Organic Beans"
+msgstr "Свежие и Органические Зерна"
+
+#: templates/testimonial.html:12 templates/testimonial.html:18
+msgid "Testimonials"
+msgstr "Отзывы"
+
+#: templates/testimonial.html:55
+msgid "Post a comment"
+msgstr "Опубликовать комментарий"
+
+#: templates/testimonial.html:68
+msgid "Your Profession"
+msgstr "Ваша Профессия"
+
+#: templates/testimonial.html:76
+msgid "Comment"
+msgstr "Комментарий"
+
+#: templates/testimonial.html:82
+msgid "Submit"
+msgstr "Подтвердить"

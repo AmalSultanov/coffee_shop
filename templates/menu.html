@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Menu" %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+             style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">{% trans 'Menu' %}</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="{% url 'pages:home' %}">{% trans 'Home' %}</a>
+                </p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">{% trans 'Menu' %}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-5">
+        <div id="menu_anchor"></div>
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase"
+                    style="letter-spacing: 5px;">{% trans 'Menu & Pricing' %}</h4>
+                <h1 class="display-4">{% trans 'Competitive Pricing' %}</h1>
+            </div>
+            <div class="row mb-0">
+                <div class="col-lg-6 mb-0">
+                    <h1 class="text-center mb-5">{% trans 'Hot Coffee' %}</h1>
+                    {% for product in hot_products %}
+                        <div class="row align-items-center product_box1 mb-5">
+                            <div class="col-4 col-sm-3">
+                                <img class="w-100 rounded-circle mb-3 mb-sm-0"
+                                     src="{{ product.image.url }}" alt="">
+{#                                <h5 class="menu-price">#}
+{#                                    ${{ product.price }}#}
+{#                                </h5>#}
+                            </div>
+                            <div class="col-8 col-sm-9">
+                                <h4>{{ product.title }}</h4>
+                                <h6 class="p-0 m-0">{{ product.price }}</h6>
+                                <p class="m-0">{{ product.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div id="products1"></div>
+                    <div class="text-center">
+                        <button id="load_more_btn1"
+                                class="btn btn-primary font-weight-bold py-2 px-4 mb-5"
+                                data-total="{{ total_hot_products }}"
+                                data-limit="2">
+                            {% trans 'Load More' %}
+                        </button>
+                        <div class="after_button1"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-0">
+                    <h1 class="text-center mb-5">{% trans 'Cold Coffee' %}</h1>
+                    {% for product in cold_products %}
+                        <div class="row align-items-center product_box2 mb-5">
+                            <div class="col-4 col-sm-3">
+                                <img class="w-100 rounded-circle mb-3 mb-sm-0"
+                                     src="{{ product.image.url }}" alt="">
+                                <h5 class="menu-price">
+                                    ${{ product.price }}</h5>
+                            </div>
+                            <div class="col-8 col-sm-9">
+                                <h4>{{ product.title }}</h4>
+                                <p class="m-0">{{ product.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div id="products2"></div>
+                    <div class="text-center">
+                        <button id="load_more_btn2"
+                                class="btn btn-primary font-weight-bold py-2 px-4 mb-5"
+                                data-total="{{ total_cold_products }}"
+                                data-limit="2">
+                            {% trans 'Load More' %}
+                        </button>
+                        <div class="after_button2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        $(document).ready(function () {
+            $("#load_more_btn1").on("click", function () {
+                let current_products = $(".product_box1").length;
+                let limit = $(this).attr('data-limit');
+                let total = $(this).attr('data-total');
+
+                $.ajax({
+                    url: "{% url 'products:load1' %}",
+                    data: {
+                        limit: limit,
+                        offset: current_products
+                    },
+                    dataType: 'json',
+                    beforeSend: function () {
+
+                    },
+                    success: function (res) {
+                        $("#products1").append(res.hot_products);
+                        //console.log(res.hot_products);
+
+                        let total_showing = $(".product_box1").length;
+                        if (total_showing == total) {
+                            $('#load_more_btn1').remove();
+                            $(".after_button1").append("<p>No more products!</p>")
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#load_more_btn2").on("click", function () {
+                let current_products = $(".product_box2").length;
+                let limit = $(this).attr('data-limit');
+                let total = $(this).attr('data-total');
+
+                $.ajax({
+                    url: "{% url 'products:load2' %}",
+                    data: {
+                        limit: limit,
+                        offset: current_products
+                    },
+                    dataType: 'json',
+                    beforeSend: function () {
+
+                    },
+                    success: function (res) {
+                        $("#products2").append(res.cold_products);
+                        //console.log(res.cold_products);
+
+                        let total_showing = $(".product_box2").length;
+                        if (total_showing == total) {
+                            $('#load_more_btn2').remove();
+                            $(".after_button2").append("<p>No more products!</p>")
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load my_tags %}
+{% load i18n %}
+
+<div class="container-fluid p-0 nav-bar">
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a href="{% url 'pages:home' %}" class="navbar-brand px-lg-4 m-0">
+            <h1 class="m-0 display-4 text-uppercase text-white">CAFE</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse"
+                data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between"
+             id="navbarCollapse">
+            <div class="navbar-nav ml-auto p-4">
+                <a href="{% url 'pages:home' %}"
+                   class="nav-item nav-link {% if request.path == '/en/' or request.path == '/ru/' %}active{% endif %}">{% trans 'Home' %}</a>
+                <a href="{% url 'info:about' %}"
+                   class="nav-item nav-link {% if request.path == '/en/info/about/' or request.path == '/ru/info/about/' %}active{% endif %}">{% trans 'About Us' %}</a>
+                <a href="{% url 'pages:service' %}"
+                   class="nav-item nav-link {% if request.path == '/en/service/' or request.path == '/ru/service/' %}active{% endif %}">{% trans 'Service' %}</a>
+                <a href="{% url 'products:menu' %}"
+                   class="nav-item nav-link {% if request.path == '/en/menu/' or request.path == '/ru/menu/' %}active{% endif %}">{% trans 'Menu' %}</a>
+                <a href="{% url 'pages:reservation' %}"
+                   class="nav-item nav-link {% if request.path == '/en/reservation/' or request.path == '/ru/reservation/' %}active{% endif %}">{% trans 'Reservation' %}</a>
+                <a href="{% url 'pages:contact' %}"
+                   class="nav-item nav-link {% if request.path == '/en/contact/' or request.path == '/ru/contact/' %}active{% endif %}">{% trans 'Contacts' %}</a>
+                <div class="nav-item dropdown">
+                    {% get_current_language as lang %}
+                    {% get_available_languages as langs %}
+                    <a href="#" class="nav-link dropdown-toggle"
+                       data-toggle="dropdown">{{ lang|upper }}</a>
+                    <div class="dropdown-menu text-capitalize">
+                        {% for l in langs %}
+                            {% if l.0 != lang %}
+                                <a href="{% get_lang_url request l.0 %}"
+                                   class="dropdown-item">{{ l.0|upper }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
