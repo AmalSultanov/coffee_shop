@@ -1,6 +1,16 @@
 {% load my_tags %}
 {% load i18n %}
 
+{% block extra_css %}
+    <style>
+        @media (max-width: 991.98px) {
+            .dm {
+                max-width: 4.5rem;
+            }
+        }
+    </style>
+{% endblock %}
+
 <div class="container-fluid p-0 nav-bar">
     <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
         <a href="{% url 'pages:home' %}" class="navbar-brand px-lg-4 m-0">
@@ -25,12 +35,17 @@
                    class="nav-item nav-link {% if request.path == '/en/reservation/' or request.path == '/ru/reservation/' %}active{% endif %}">{% trans 'Reservation' %}</a>
                 <a href="{% url 'pages:contact' %}"
                    class="nav-item nav-link {% if request.path == '/en/contact/' or request.path == '/ru/contact/' %}active{% endif %}">{% trans 'Contacts' %}</a>
-                <div class="nav-item dropdown">
+                <div class="dropdown">
                     {% get_current_language as lang %}
                     {% get_available_languages as langs %}
                     <a href="#" class="nav-link dropdown-toggle"
-                       data-toggle="dropdown">{{ lang|upper }}</a>
-                    <div class="dropdown-menu text-capitalize">
+                       role="button" id="dropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"
+                       style="outline: none;">{{ lang|upper }}</a>
+                    <div class="dropdown-menu dm mt-0"
+                         style="min-width: 0.5rem;"
+                         aria-labelledby="dropdownMenuLink">
                         {% for l in langs %}
                             {% if l.0 != lang %}
                                 <a href="{% get_lang_url request l.0 %}"
