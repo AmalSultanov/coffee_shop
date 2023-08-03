@@ -31,7 +31,7 @@ class ReservationInfoModelAdmin(MyTranslationAdmin):
 
 
 @admin.register(ReservationModel)
-class ReservationModelAdmin(MyTranslationAdmin):
+class ReservationModelAdmin(admin.ModelAdmin):
     list_display = ['name', 'date', 'time', 'number_of_people', 'created_at']
     list_filter = ['date', 'time', 'number_of_people', 'created_at']
     search_fields = ['name', 'date', 'time', 'number_of_people']
