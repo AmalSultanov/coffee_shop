@@ -156,6 +156,7 @@ cython_debug/
 static
 media
 .idea/
+.DS_Store
 
 requirements.txt
 
