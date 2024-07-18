@@ -22,7 +22,8 @@ def load_more_hot_data(request):
             'price': product.price,
             'description': product.description
         } for product in hot_products]
-    t = render_to_string('menu_hot_item.html', {'hot_products': product_data})
+    t = render_to_string('menu_hot_item.html',
+                         {'hot_products': product_data})
 
     return JsonResponse({'hot_products': t})
 

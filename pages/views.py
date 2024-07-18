@@ -4,8 +4,8 @@ from django.views.generic import TemplateView, CreateView
 
 from info.models import AboutModel, ClientModel
 from pages.forms import ReservationModelForm, ContactModelForm
-from pages.models import HomeBannerModel, ContactInfoModel, \
-    ReservationInfoModel
+from pages.models import (HomeBannerModel, ContactInfoModel,
+                          ReservationInfoModel)
 from products.models import ProductModel
 
 

@@ -25,7 +25,8 @@ class HomeBannerModel(models.Model):
 class ReservationInfoModel(models.Model):
     discount_title = models.CharField(max_length=100,
                                       verbose_name=_('discount_title'))
-    sub_title = models.CharField(max_length=100, verbose_name=_('sub_title'))
+    sub_title = models.CharField(max_length=100,
+                                 verbose_name=_('sub_title'))
     description = models.TextField(verbose_name=_('description'))
     created_at = models.DateTimeField(auto_now_add=True,
                                       verbose_name=_('created_at'))

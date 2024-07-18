@@ -1,8 +1,8 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from pages.models import HomeBannerModel, ContactInfoModel, ContactModel, \
-    ReservationInfoModel, ReservationModel
+from pages.models import (HomeBannerModel, ContactInfoModel, ContactModel,
+                          ReservationInfoModel, ReservationModel)
 
 
 class MyTranslationAdmin(TranslationAdmin):
@@ -19,20 +19,23 @@ class MyTranslationAdmin(TranslationAdmin):
 
 @admin.register(HomeBannerModel)
 class HomeBannerModelAdmin(MyTranslationAdmin):
-    list_display = ['upper_title', 'middle_title', 'lower_title', 'created_at']
+    list_display = ['upper_title', 'middle_title',
+                    'lower_title', 'created_at']
     list_filter = ['created_at']
 
 
 @admin.register(ReservationInfoModel)
 class ReservationInfoModelAdmin(MyTranslationAdmin):
-    list_display = ['discount_title', 'sub_title', 'description', 'created_at']
+    list_display = ['discount_title', 'sub_title',
+                    'description', 'created_at']
     list_filter = ['discount_title', 'created_at']
     search_fields = ['discount_title']
 
 
 @admin.register(ReservationModel)
 class ReservationModelAdmin(admin.ModelAdmin):
-    list_display = ['name', 'date', 'time', 'number_of_people', 'created_at']
+    list_display = ['name', 'date', 'time',
+                    'number_of_people', 'created_at']
     list_filter = ['date', 'time', 'number_of_people', 'created_at']
     search_fields = ['name', 'date', 'time', 'number_of_people']
 

@@ -1,7 +1,7 @@
 from django.urls import path
 
-from pages.views import ContactCreateView, ReservationCreateView, \
-    ServiceTemplateView, HomeTemplateView
+from pages.views import (ContactCreateView, ReservationCreateView,
+                         ServiceTemplateView, HomeTemplateView)
 
 app_name = 'pages'
 
