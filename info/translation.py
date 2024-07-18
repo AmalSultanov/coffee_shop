@@ -1,7 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
 
-from info.models import AboutModel, TestimonialImageModel, \
-    ClientModel
+from info.models import AboutModel, TestimonialImageModel, ClientModel
 
 
 @register(AboutModel)

@@ -1,8 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from info.models import AboutModel, TestimonialImageModel, \
-    ClientModel
+from info.models import AboutModel, TestimonialImageModel, ClientModel
 
 
 class MyTranslationAdmin(TranslationAdmin):
